@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="addrType"/>
+        <cc:attribute name="managedBean" required="true"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <h:panelGrid columns="2">
+            <f:facet name="header">
+                <h:outputText value="#{cc.attrs.addrType} адрес"/>
+            </f:facet>
+            <h:outputLabel for="line" value="Улица"/>
+            <h:inputText id="line" value="#{cc.attrs.managedBean.line}"/>
+            <h:outputLabel for="city" value="Город"/>
+            <h:inputText id="city" value="#{cc.attrs.managedBean.city}"/>
+            <h:outputLabel for="state" value="Республика"/>
+            <h:inputText id="state" value="#{cc.attrs.managedBean.state}"/>
+            <h:outputLabel for="zip" value="Индекс"/>
+            <h:inputText id="zip" value="#{cc.attrs.managedBean.zip}"
+                         size="6" maxlength="6"/>
+        </h:panelGrid>
+    </cc:implementation>
+</html>
